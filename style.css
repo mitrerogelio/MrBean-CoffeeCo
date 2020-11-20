@@ -1,0 +1,317 @@
+/* 9 rows and 4 columns */
+/* Universal */
+* { 
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    list-style: none;
+    color: rgb(30, 57, 50);
+    flex-wrap: nowrap;
+    flex-shrink: 1;
+}
+
+#grid-container {
+    display: grid;
+    grid-template: auto 100px repeat(5, 1fr) 150px / repeat(4, 1fr);
+    grid-template-areas: 
+    "head head head head"
+    "message message message message"
+    "drink drink drink drink"
+    "sandwich sandwich sandwich sandwich"
+    "smoothie smoothie smoothie smoothie"
+    "delivery delivery mail mail"
+    "action action action action"
+    "foot foot foot foot"
+    ;
+    grid-gap: 1%;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+ul {
+    padding: 5px 5px;
+}
+li {
+    line-height: 35px;
+}
+.button {
+    background-color: inherit;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 7px 16px;
+    font-size: 1.2rem;
+}
+.button:hover {
+    background-color: black;
+    color: white;
+}
+.underline {
+    border-bottom: 1px solid rgb(30, 57, 50);
+    padding: 1.5px;
+}
+.underline:hover {
+    text-decoration: none;
+}
+
+/* Nav */
+header {
+    grid-area: head;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-nav {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#nav-one {
+    width: 800px;
+}
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    padding: 0rem .5rem;
+}
+#header-pin {
+    font-size: 1.2rem;
+}
+.header-button {
+    font-size: inherit;
+    color: black;
+}
+#yang-button {
+    background-color: white;
+    color: black;
+}
+#yang-button:hover {
+    background-color: grey;
+    color: white;
+}
+#yin-button {
+    background-color: black;
+    color: white;
+}
+#yin-button:hover {
+    background-color: white;
+    color: black;
+}
+#nav-link {
+    padding: 0px 13px;
+    width: fit-content;
+}
+#nav-two {
+    justify-content: space-evenly;
+}
+.navbar-links ul {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.navbar-links ul li {
+    padding-right: 3rem;
+}
+.toggle {
+    position: absolute;
+    top: 2.5rem;
+    right: 2rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.toggle .line {
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;   
+}
+.responsive-links {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+.link a {
+    display: block;
+    padding: 1rem;
+}
+
+/* Nav - Mobile */
+@media (max-width: 1150px) {
+    #nav-two {
+        display: none;
+    }
+    #nav-one {
+        background-color: rgb(212,233,226);
+        width: 100%;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    .toggle {
+        display: flex;
+    }   
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0px;
+        padding: 0px;
+    }
+    .link a {
+        width: 100%;
+        text-align: center;
+    }
+    .link a {
+        padding: .5rem 1rem;
+    }
+    .navbar-links {
+        display: none;
+    }
+    .navbar-links ul li {
+        padding: 2px 0px;
+    }
+    .navbar-links ul li:hover {
+        background-color: rgb(184, 184, 184);
+    }
+    .navbar-links.open {
+        display: flex;
+        width: 100%;
+        font-size: 22px;
+    }
+}
+
+/* main */
+#covid-message {
+    grid-area: message;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(212,233,226);
+    font-size: 22px;
+    text-align: center;
+}
+#covid-message a {
+    padding-left: 8px;
+}
+#covid-message p {
+    width: 600px;
+    color: rgb(30, 57, 50);
+}
+
+.featured-container {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: rgb(212,233,226);
+}
+.featured-description {
+    padding: 0px 5%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.featured-image {
+    width: 50%;
+}
+#drink {
+    grid-area: drink;
+}
+#sandwich {
+    grid-area: sandwich;
+}
+#smoothie {
+    grid-area: smoothie;
+}
+
+/* Ads */
+.ad-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    background-color: #faf6eb;
+}
+.ad-icon {
+    font-size: 8rem;
+}
+#delivery {
+    grid-area: delivery;
+}
+#mail {
+    grid-area: mail;
+}
+#action {
+    grid-area: action;
+    background-color: #faf6eb;
+}
+
+/* Footer */
+footer {
+    height: fit-content;
+    grid-area: foot;
+    margin-bottom: 30px;
+}
+aside {
+    height: 200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.social-links {
+    font-size: 40px;
+    padding: 0px 15px;
+}
+.social-links:hover {
+    text-decoration: none;
+    font-size: 45px;
+}
+.end-links {
+    display: inline;
+}
+@media (max-width: 800px) {
+    #grid-container {
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+    }
+    #nav-one {
+        height: 75px;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    #nav-one > h1 {
+        width: 60%;
+        font-size: 25px;
+        margin-right: 20px;
+    }
+    #covid-message {
+        margin-top: 20px;
+    }
+    .featured-container, .ad-container, footer, aside {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        flex: auto;
+        margin-top: 30px;
+        padding: 15px 5px;
+    }
+    .featured-image {
+        height: 50%;
+        width: 100%;
+        padding: 10px 0px;
+    }
+    aside {
+        padding-top: 125px;
+    }
+    .end-list {
+        padding-top: 150px;
+    }
+}
