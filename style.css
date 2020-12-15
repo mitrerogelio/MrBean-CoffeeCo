@@ -282,7 +282,6 @@ aside {
         flex: auto;
     }
     #nav-one {
-        height: 75px;
         justify-content: center;
         align-items: flex-start;
     }
